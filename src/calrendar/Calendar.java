@@ -10,68 +10,27 @@ public class Calendar {
 		return maxdays[month - 1];
 	}
 
-	public void samplecalendar1() {
-		System.out.println("일   월   화  수  목   금   토");
+	public void mycalendar(int year, int month) {
+		System.out.printf("     %3d 년 %2d 월 \n ", year, month);
+		System.out.println("SU MO TU WE TH FI SA");
 		System.out.println("--------------------");
-		System.out.println("1  2   3  4  5  6  7");
-		System.out.println("8  9  10 11 12 13 14");
-		System.out.println("15 16 17 18 19 20 21");
-		System.out.println("22 23 24 25 26 27 28");
-		System.out.println("29 30 31 ");
-	}
+		int maxday = maxofmonth(month);
+		for (int i = 1; i <= maxday; i++) {
+			System.out.printf("%3d", i);
+			if (i % 7 == 0) {
+				System.out.println();
+			}
 
-	public void samplecalendar2() {
-		System.out.println("일   월   화  수  목   금   토");
-		System.out.println("--------------------");
-		System.out.println("1  2   3  4  5  6  7");
-		System.out.println("8  9  10 11 12 13 14");
-		System.out.println("15 16 17 18 19 20 21");
-		System.out.println("22 23 24 25 26 27 28");
-	}
+		}
 
-	public void samplecalendar3() {
-		System.out.println("일   월   화  수  목   금   토");
-		System.out.println("--------------------");
-		System.out.println("1  2   3  4  5  6  7");
-		System.out.println("8  9  10 11 12 13 14");
-		System.out.println("15 16 17 18 19 20 21");
-		System.out.println("22 23 24 25 26 27 28");
-		System.out.println("29 30 ");
+		// System.out.println("1 2 3 4 5 6 7");
+		// System.out.println("8 9 10 11 12 13 14");
+		// System.out.println("15 16 17 18 19 20 21");
+		// System.out.println("22 23 24 25 26 27 28");
+		// System.out.println("29 30 31 ");
 	}
 
 	public static void main(String[] args) {
-
-		String PROMPT = "Cal>";
-
-		Scanner sc = new Scanner(System.in);
-		Calendar cal = new Calendar();
-
-		// System.out.println("반복횟수를 입력하세요.");
-		// int repeat = sc.nextInt();
-
-		while (true) {
-			System.out.println("\n달을 입력하세요.");
-			System.out.println(PROMPT);
-			int month = sc.nextInt();
-
-			if (month < 1) {
-				break;
-			}
-			if (month > 12) {
-				continue;
-			}
-			System.out.printf("%d 달의 최대일수는 %d일 입니다.\n", month, cal.maxofmonth(month));
-
-			if (cal.maxofmonth(month) == 31) {
-				cal.samplecalendar1();
-			} else if (cal.maxofmonth(month) == 28) {
-				cal.samplecalendar2();
-			} else
-				cal.samplecalendar3();
-
-		}
-		System.out.println("\n---bye---");
-		sc.close();
 
 	}
 
